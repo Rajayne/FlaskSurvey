@@ -1,0 +1,9 @@
+.navbar {
+    background-color: black;
+    overflow: hidden;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
