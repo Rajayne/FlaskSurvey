@@ -16,6 +16,12 @@ body {
     padding: 14px 16px;
 }
 
+.questions {
+    font-size: 1rem;
+    padding: 5px;
+    margin: 10px 10px 25px;
+}
+
 .button {
     color: black;
     text-decoration: none;

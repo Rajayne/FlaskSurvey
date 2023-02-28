@@ -2,6 +2,13 @@
 
 {% block title %} Home Page {% endblock %}
 {% block content %}
-<h1>Question 1</h1>
-
+<h2>Question 1</h2>
+<form class="questions" method="POST" action="/answer" onsubmit="">
+    <input type="radio" name="answer" value="A">Option A<br>
+    <input type="radio" name="answer" value="B">Option B<br>
+    <input type="radio" name="answer" value="C">Option C<br>
+    <input type="radio" name="answer" value="D">Option D<br>
+    <br>
+    <input type="Submit" value="Next">
+</form>
 {% endblock %}

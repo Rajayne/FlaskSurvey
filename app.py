@@ -18,6 +18,26 @@ def home():
 
 RESPONSES = []
 
+# QUESTIONS = {
+#     0: "Question 1",
+#     1: "Question 2",
+#     2: "Question 3",
+#     3: "Question 4",
+#     4: "Question 5",
+# }
+
+# Int: indicates id should be converted to integer
+# .get(var, alt) if var not found will return alt i.e. no post 5
+# @app.route('/question/<int:id>')
+# def find_question(id):
+#     question = QUESTIONS.get(id, "Question not found")
+#     return f"<p>{question}</p>"
+
 @app.route('/question')
-def question():
+def find_question():
     return render_template('question.html')
+
+@app.route('/answer', methods=["POST"])
+def save_answer():
+    answer = request.form['answer']
+    return f"<p>{answer}</p>"
