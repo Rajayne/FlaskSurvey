@@ -15,3 +15,9 @@ from surveys import satisfaction_survey
 @app.route('/')
 def home():
     return render_template('home.html')
+
+RESPONSES = []
+
+@app.route('/question')
+def question():
+    return render_template('question.html')
