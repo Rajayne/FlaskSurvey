@@ -39,5 +39,14 @@ def find_question():
 
 @app.route('/answer', methods=["POST"])
 def save_answer():
-    answer = request.form['answer']
-    return f"<p>{answer}</p>"
+    answer = request.form.get('answer',None)
+    if answer == None:
+        flash('Please select an option!')
+        return redirect('/question')
+    elif answer in RESPONSES:
+        flash("Question already answered!", "error")
+        return redirect('/')
+    else:
+        RESPONSES.append(answer)
+        flash("Question answered!", "success")
+        return redirect('/question')
