@@ -1,14 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %} Home Page {% endblock %}
+{% block title %} Survey Questions {% endblock %}
 {% block content %}
-<h2>Question 1</h2>
+<h2>{{question.question}}</h2>
 <form class="questions" method="POST" action="/answer">
-    <input type="radio" name="answer" value="A">Option A<br>
-    <input type="radio" name="answer" value="B">Option B<br>
-    <input type="radio" name="answer" value="C">Option C<br>
-    <input type="radio" name="answer" value="D">Option D<br>
+    {% for choice in question.choices %}
+    <input type="radio" name="answer" value="{{choice}}">{{choice}}<br>
+    {% endfor %}
     <br>
-    <input type="Submit" value="Next">
+    <input type="Submit" value="Next" class="button">
 </form>
 {% endblock %}
